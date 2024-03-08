@@ -2,9 +2,11 @@
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1">
       <h1><%= @list.name %></h1>
+      <% @list.bookmarks.each do |bookmark|  %>
+        <%= bookmark.movie.title %>
+      <% end %>
       <%= link_to 'Back to the lists', lists_path %>
-      <table class="table table-bordered">
-        <tbody>
-
-        </tbody>
-      </table>
+      <%= link_to 'Add movie', new_list_bookmark_path(@list)  %>
+    </div>
+  </div>
+</div>
